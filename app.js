@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
 
 // Authentication
 app.use(function(req, res, next) {
-	if(req.query.api_key && req.query.api_key === req.configs.auth.token) {
+	if(req.query.api_key && req.query.api_key == req.configs.auth.token) {
 		return next();
 	}
 	return res.status(403).json({ error: 'Unauthorized!' });
@@ -51,7 +51,7 @@ app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-	var err = new Error(configs.errors.notFound.message);
+	var err = new Error(req.configs.errors.notFound.message);
 	res.status = 404;
 	return res.json({
 		error: err.message
@@ -77,7 +77,7 @@ if (app.get('env') === 'development') {
 app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	return res.json({
-		message: configs.errors.serverError.message,
+		message: req.configs.errors.serverError.message,
 		error: {}
 	});
 });

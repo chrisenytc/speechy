@@ -50,6 +50,8 @@ router.post('/recognition', function(req, res, next) {
 				return res.status(500).json({ message: req.configs.errors.unknow.message });
 			}
 
+			fs.unlinkSync(output);
+
 			return res.status(200).json({
 				transcripts: results[0]['result'][0]['alternative']
 			});

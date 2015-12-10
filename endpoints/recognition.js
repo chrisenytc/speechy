@@ -43,7 +43,7 @@ router.post('/recognition', function(req, res, next) {
 		speech({
 			file: output,
 			key: req.configs.speech.key,
-			lang: req.configs.speech.lang,
+			lang: req.body.locale || req.configs.speech.lang,
 			maxResults: req.configs.speech.max_results
 		}, function (err, results) {
 			if(err) {

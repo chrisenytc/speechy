@@ -44,6 +44,7 @@
 		"api",
 		"service",
 		"google",
-		"solution"
+		"solution",
+		"rescuer"
 	]
 }

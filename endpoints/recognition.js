@@ -46,18 +46,14 @@ router.post('/recognition', function(req, res, next) {
 			lang: req.body.locale || req.configs.speech.lang,
 			maxResults: req.configs.speech.max_results
 		}, function (err, results) {
-			if(err) {
+			if(err || !results) {
 				return res.status(500).json({ message: req.configs.errors.unknow.message });
 			}
 
 			fs.unlinkSync(output);
 
 			console.log('Speech API output =>');
-			console.log(apiRes);
-
-			if(!results[0]) {
-				return res.status(500).json({ message: req.configs.errors.fail.message });
-			}
+			console.log(results);
 
 			return res.status(200).json({
 				transcripts: results[0]['result'][0]['alternative']

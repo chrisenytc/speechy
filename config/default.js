@@ -1,6 +1,6 @@
 
 module.exports = {
-	temp_dir: process.env.TEMP_DIR || '/tmp/rescue/',
+	temp_dir: process.env.TEMP_DIR || '/tmp/rescuer/',
 	speech: {
 		key: process.env.GOOGLE_SPEECH_KEY || '',
 		lang: process.env.GOOGLE_SPEECH_LANGUAGE || 'pt-BR',

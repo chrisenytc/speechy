@@ -1,4 +1,5 @@
 var fs = require('fs');
+var _ = require('lodash');
 var path = require('path');
 var cuid = require('cuid');
 var express = require('express');
@@ -56,7 +57,7 @@ router.post('/recognition', function(req, res, next) {
 			console.log(results);
 
 			return res.status(200).json({
-				transcripts: results[0]['result'][0]['alternative']
+				transcripts: _.get(results, '[0].result.[0].alternative') || []
 			});
 		});
 	})

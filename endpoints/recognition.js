@@ -54,7 +54,7 @@ router.post('/recognition', function(req, res, next) {
 			fs.unlinkSync(output);
 
 			console.log('Speech API output =>');
-			console.log(results);
+			console.log(JSON.stringify(results));
 
 			return res.status(200).json({
 				transcripts: _.get(results, '[0].result.[0].alternative') || []

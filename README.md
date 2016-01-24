@@ -36,6 +36,11 @@ Test your speechy app
 ```bash
 npm test
 ```
+
+## How to get a Speech API key
+
+See how to get a speech api key for use with speechy in [this link](https://www.chromium.org/developers/how-tos/api-keys)
+
 ## Contributing
 
 See the [CONTRIBUTING Guidelines](https://github.com/chrisenytc/speechy/blob/master/CONTRIBUTING.md)

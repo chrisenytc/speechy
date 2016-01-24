@@ -1,8 +1,6 @@
 # Speechy
 
-> A speechy recognition API service to decode audio to text
-
-[![Build Status](https://secure.travis-ci.org/chrisenytc/speechy.png?branch=master)](https://travis-ci.org/chrisenytc/rescue)
+> A speech recognition API service to decode audio to text
 
 ## Getting Started
 

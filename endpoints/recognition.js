@@ -38,6 +38,7 @@ router.post('/recognition', function(req, res, next) {
 	request
 	.get(req.body.url)
 	.on('error', function errorHandler(err) {
+		console.log('Error: ', err);
 		return res.status(500).json({ message: req.configs.errors.fail.message });
 	})
 	.on('end', function handler(apiRes) {
@@ -48,6 +49,7 @@ router.post('/recognition', function(req, res, next) {
 			maxResults: req.configs.speech.max_results
 		}, function (err, results) {
 			if(err || !results) {
+				console.log('Speech Error: ', err);
 				return res.status(500).json({ message: req.configs.errors.unknow.message });
 			}
 
